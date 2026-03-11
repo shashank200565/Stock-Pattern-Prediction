@@ -1,9 +1,9 @@
-# 📈 Stock Chart Pattern Recognition using Deep Learning
+#  Stock Chart Pattern Recognition using Deep Learning
 
 This project focuses on identifying classical technical analysis patterns from stock candlestick chart images to study market behavior and explore the feasibility of pattern-based prediction using deep learning.
 Instead of using pre-labeled datasets, the entire pipeline — from data collection to image generation, labeling, and model training — is built from scratch using real market data.
 
-# 🛠️ Tools & Libraries Used
+#  Tools & Libraries Used
 
 yfinance – downloading historical stock market data
 
@@ -15,7 +15,7 @@ TensorFlow / Keras – deep learning & transfer learning
 
 scikit-learn – evaluation metrics and class weighting
 
-# 📊 Patterns Considered
+#  Patterns Considered
 
 Head and Shoulders
 
@@ -29,7 +29,7 @@ Descending Triangle
 
 No Pattern
 
-# 📉 Stocks Used
+#  Stocks Used
 
 The following Indian stocks were downloaded using yfinance:
 
@@ -55,7 +55,7 @@ HINDUNILVR.NS
 
 All raw OHLC data was stored in the data/raw directory.
 
-# 🧱 Dataset Generation Pipeline
+#  Dataset Generation Pipeline
 
 Historical OHLC data for each stock was downloaded and stored as CSV files.
 
@@ -69,7 +69,7 @@ Based on these rules, images were classified into their respective pattern folde
 
 Image Dataset - https://drive.google.com/drive/folders/1amLgLk41b6GrUAVDRWrjEiq37ocarwpE?usp=sharing
 
-# 📂 Data Splitting
+#  Data Splitting
 
 A 75/25 split was applied between training and validation datasets.
 
@@ -77,7 +77,7 @@ Due to real market behavior, the dataset exhibited significant class imbalance, 
 
 ![Image Count](Assets/image_count.png)
 
-# 🧠 Model Architecture
+#  Model Architecture
 
 Transfer learning was used with MobileNetV2 as the backbone:
 
@@ -98,12 +98,12 @@ Final output layer using sigmoid activation
 ### Model Architecture
 ![Model Summary](Assets/model_summary.png)
 
-# ⚖️ Handling Class Imbalance
+#  Handling Class Imbalance
 
 Since some patterns had significantly fewer samples than others, class weights were applied during training.
 This ensured that minority classes contributed more strongly to the loss function and improved recall for underrepresented patterns.
 
-# 📈 Training & Evaluation
+#  Training & Evaluation
 
 The model was trained using class-weighted loss and evaluated using multiple metrics:
 
@@ -122,7 +122,7 @@ Per-class Recall (preferred over raw accuracy due to imbalance)
 
 ![Model Summary](Assets/confusion_matrix.png)
 
-# 🔍 Key Observations & Learnings
+#  Key Observations & Learnings
 
 One of the most important takeaways from this project is that real-world stock pattern prediction is extremely challenging:
 
@@ -138,7 +138,7 @@ Achieving consistently high (>85%) validation accuracy on real market data is ra
 
 This project highlights the practical limitations of deep learning in financial pattern recognition, while emphasizing the importance of proper evaluation beyond simple accuracy metrics.
 
-# 📌 Final Note
+#  Final Note
 
 This project is intended as an exploratory and educational study rather than a trading system.
 All scripts required to reproduce the dataset and experiments are provided, while large generated datasets are excluded due to size constraints.
